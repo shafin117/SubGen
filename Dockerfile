@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Install whisper.cpp
+# Install whisper.cpp with optimized compilation
 RUN git clone https://github.com/ggerganov/whisper.cpp.git /tmp/whisper && \
     cd /tmp/whisper && \
-    make && \
+    make -j$(nproc) 2>&1 | tail -n 20 && \
     mkdir -p /opt/whisper && \
     cp main /opt/whisper/ && \
     wget -q https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en.bin -O /opt/whisper/ggml-base.en.bin && \
