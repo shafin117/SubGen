@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.next
+.env.local
+.DS_Store
+*.log
+.git
+.gitignore
+README.md
+.vscode
+.idea
+*.md
+build-production.bat
+start-production.bat
+install.bat
+start.bat
+setup-whisper-server.sh

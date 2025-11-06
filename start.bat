@@ -1,0 +1,6 @@
+@echo off
+echo Starting SubGen development server...
+echo.
+echo Opening http://localhost:3000 in your browser...
+echo.
+call npm run dev
