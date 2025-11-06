@@ -31,7 +31,7 @@ ENV PORT=3000
 COPY package*.json ./
 
 # Install dependencies (including devDependencies for build)
-RUN npm ci
+RUN npm ci && npm list tailwindcss autoprefixer postcss
 
 # Copy application files
 COPY . .
