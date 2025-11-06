@@ -17,7 +17,7 @@ RUN git clone https://github.com/ggerganov/whisper.cpp.git /tmp/whisper && \
     cd /tmp/whisper && \
     make -j$(nproc) 2>&1 | tail -n 20 && \
     mkdir -p /opt/whisper && \
-    cp main /opt/whisper/ && \
+    cp bin/main /opt/whisper/ && \
     wget -q https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en.bin -O /opt/whisper/ggml-base.en.bin && \
     rm -rf /tmp/whisper
 
